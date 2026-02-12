@@ -1,6 +1,39 @@
 import Button from "./components/Button";
+import CategoryCard from "./components/CategoryCard";
 import Header from "./components/header";
-
+import JobCard from "./components/JobCard";
+const MOCK_JOBS = [
+  {
+    id: 1,
+    title: "Forward Security Director",
+    company: "Beuch, Schuppe and Schulist Co",
+    timeAgo: "10 min ago",
+    category: "Hotels & Tourism",
+    type: "Full time",
+    salary: "$40000-$42000",
+    location: "New-York, USA"
+  },
+  {
+    id: 2,
+    title: "Product Designer Alpha",
+    company: "Solana Stream Labs",
+    timeAgo: "2 hours ago",
+    category: "Design & Creative",
+    type: "Remote",
+    salary: "$70k-$90k",
+    location: "Global"
+  },
+  {
+    id: 3,
+    title: "Construir coche para la 33",
+    company: "Tractor Martin",
+    timeAgo: "1 min ago",
+    category: "Formula 1 Team",
+    type: "Full Time",
+    salary: "Fe en Aston Martin",
+    location: "de donde sea, necesitamos la 33"
+  }
+];
 
 export default function HomePage() {
   return (
@@ -13,7 +46,7 @@ export default function HomePage() {
       <img 
         src="/job.jpg" 
         alt="Background" 
-        className="w-full h-auto object-cover  "
+        className="w-full h-145 object-cover  "
       />
      
     </div>
@@ -107,6 +140,65 @@ export default function HomePage() {
       <span className="text-2xl font-black tracking-tighter italic">BIRDEYE</span>
       <span className="text-2xl font-black tracking-tighter italic">RAYDIUM</span>
       <span className="text-2xl font-black tracking-tighter italic">JUPITER</span>
+    </div>
+  </div>
+</section>
+<section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-end mb-12">
+            <div className="text-left">
+              <h2 className="text-4xl font-black text-black tracking-tighter uppercase">
+                Recent <span className="text-[#800020]">Jobs</span> Available
+              </h2>
+              <div className="w-20 h-1.5 bg-[#800020] mt-2"></div>
+            </div>
+            <button className="text-[#800020] font-black uppercase tracking-widest text-xs border-b-2 border-[#800020] pb-1 hover:text-black hover:border-black transition-all">
+              View All
+            </button>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {MOCK_JOBS.map((job) => (
+              <JobCard key={job.id} {...job} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-24 bg-[#F8F9FA]"> {/* Un fondo gris muy sutil para que las cards blancas resalten */}
+  <div className="container mx-auto px-4">
+    
+    {/* Encabezado */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-black text-black tracking-tighter uppercase mb-4">
+        Browse by <span className="text-[#800020]">Category</span>
+      </h2>
+      <p className="text-gray-500 max-w-2xl mx-auto font-medium">
+        Explore jobs across different industries and find the one that fits your expertise.
+      </p>
+    </div>
+
+    {/* Grid de Categorías */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <CategoryCard 
+        title="Agriculture" 
+        jobsCount="1254" 
+        icon={<svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>} 
+      />
+      <CategoryCard 
+        title="Metal Production" 
+        jobsCount="816" 
+        icon={<svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>} 
+      />
+      <CategoryCard 
+        title="Commerce" 
+        jobsCount="2082" 
+        icon={<svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>} 
+      />
+      <CategoryCard 
+        title="Construction" 
+        jobsCount="1520" 
+        icon={<svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>} 
+      />
     </div>
   </div>
 </section>
