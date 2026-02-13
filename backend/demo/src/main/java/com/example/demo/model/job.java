@@ -15,5 +15,9 @@ public class job {
     private String title;
     private String company;
     private String description;
+    private String type;
+    private String category;
+    private String location;
     private Double salary;
+    
 }

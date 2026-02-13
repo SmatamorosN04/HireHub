@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 export default function Header(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,8 +28,8 @@ export default function Header(){
                 </div> 
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-bold tracking-wide uppercase">
-                    <a href="#" className="hover:text-[#800020] transition-colors">Home</a>
-                    <a href="#" className="hover:text-[#800020] transition-colors">Jobs</a>
+                    <Link href="/" className="hover:text-[#800020] transition-colors">Home</Link>
+                    <Link href="/jobs" className="hover:text-[#800020] transition-colors">Jobs</Link>
                     <a href="#" className="hover:text-[#800020] transition-colors">About Us</a>
                     <a href="#" className="hover:text-[#800020] transition-colors">Contact Us</a>               
                 </nav>

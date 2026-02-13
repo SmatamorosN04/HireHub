@@ -1,5 +1,6 @@
 import Button from "./components/Button";
 import CategoryCard from "./components/CategoryCard";
+import Footer from "./components/Footer";
 import Header from "./components/header";
 import JobCard from "./components/JobCard";
 const MOCK_JOBS = [
@@ -46,7 +47,7 @@ export default function HomePage() {
       <img 
         src="/job.jpg" 
         alt="Background" 
-        className="w-full h-145 object-cover  "
+        className="w-full h-202 sm:h-145 object-cover  "
       />
      
     </div>
@@ -203,6 +204,7 @@ export default function HomePage() {
   </div>
 </section>
       </main>
+      <Footer/>
     </div>
   );
 }
