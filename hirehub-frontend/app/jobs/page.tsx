@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/header";
 import JobCard from "../components/JobCard";
 import JobFilter from "../components/JobFilter";
@@ -75,7 +76,7 @@ export default function JobsPage(){
             </div></div>
                
            </main>
-
+              <Footer/>
         </div>
 
     )
